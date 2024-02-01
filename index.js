@@ -23,7 +23,7 @@ const shoppingCart = {
       if (this.items[i].name === newItemName) {
         return;
       }
-    } // check if item with that name is in cart yet
+    } // check if there is a product with the same name in the cart
 
     this.items.push(newItem);
     this.calculateTotal();
@@ -36,7 +36,7 @@ const shoppingCart = {
       if (!(this.items[i].name === itemName)) {
         result.push(this.items[i]);
       }
-    } // add every item again except for the one being deleted
+    } // add every element again except the one being removed
 
     this.items = [...result];
     this.calculateTotal();
@@ -50,7 +50,7 @@ const shoppingCart = {
         this.calculateTotal();
         return;
       }
-    } // if with that name item in then change quantity to new
+    } // if there is a product with this name, change the quantity to a new one
   },
 
   calculateTotal() {
@@ -61,7 +61,7 @@ const shoppingCart = {
     let result = 0;
     for (let i = 0; itemsLen > i; i += 1) {
       result += this.items[i].price * this.items[i].quantity;
-    } // full calc of total in cart
+    } // full calculation of the amount in the cart
 
     this.total = result;
   },
